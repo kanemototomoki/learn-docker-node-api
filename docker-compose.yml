@@ -1,0 +1,41 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    # working_dir: /var/www/
+    env_file: ./server/.env
+    environment:
+      - TZ=Asia/Tokyo
+    tty: true
+    ports:
+      - '3306:3306'
+    # environment:
+    #   - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    #   - MYSQL_DATABASE=learn-docker-express-api
+    volumes:
+      - ./server/mysql/conf:/etc/mysql/conf.d/:ro
+      - mysql_data:/var/lib/mysql
+    networks:
+      - learn-docker-express-api
+  app:
+    image: node:12
+    container_name: app
+    # env_file: ./app.env
+    environment:
+      - TZ=Asia/Tokyo
+      - DEBUG=app:*
+    tty: true
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./server/src:/app
+    working_dir: /app
+    networks:
+      - learn-docker-express-api
+    depends_on:
+      - db
+networks:
+  learn-docker-express-api:
+volumes:
+  mysql_data:
