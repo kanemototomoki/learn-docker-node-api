@@ -1,9 +1,19 @@
 ## 概要
-- expressでのAPIを作る練習
+- node.js環境でのAPIを作る練習
 
+```sh
+server
+└── src
+│   ├── express // express-generator で作成
+│   └── nest    // nest new で作成
+└── database    // 共通のDB
+```
 ## アーキテクチャ
-- docker v3
-- node v12
-- express v4
-- sequelize 6
-- mysql 5.7
+
+| 名前 | バージョン|
+| :-: | :-: |
+| docker-compose | 3.x |
+| node | 12.x |
+| express | 4.x |
+| sequelize | 6.x |
+| mysql | 5.7 |
