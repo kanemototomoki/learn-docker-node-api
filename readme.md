@@ -21,15 +21,26 @@ server
 ## テーブル定義
 
 ### users
-| PK | UK | カラム論理名 | カラム物理名 | データ型 | 桁 | NotNull | default | 備考 |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| ○ | | id | ユーザID | int | 指定しない | ○ | | auto_increment, unsigned|
-| | | name | ユーザ名 | varchar | 255 | ○ | | |
-| | | password | パスワード | varchar | 255 | ○ | | |
-| | | created_at | 作成日時 | datetime
+| PK | UK | FK| カラム物理名 | カラム論理名 | データ型 | 桁 | NotNull | default | 備考 |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| ○ | | | id | ユーザID | int | 指定しない | ○ | | auto_increment, unsigned|
+| | | | name | ユーザ名 | varchar | 255 | ○ | | |
+| | | | password | パスワード | varchar | 255 | ○ | | |
+| | | | created_at | 作成日時 | datetime| | ○ | | | 
+| | | | updated_at | 更新日時 | datetime| | ○ | | | 
+
+
+
+### posts
+| PK | UK | FK | カラム物理名 | カラム論理名 | データ型 | 桁 | NotNull | default | 備考 |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| ○ | | | id | 投稿ID | int | 指定しない | ○ | | auto_increment, unsigned |
+| | | ○ | user_id | 投稿者ID | int | 指定しない | ○ | | |
+| | | | title | タイトル | varchar| 255 | | | | |
+| | | | content | 内容 | text | | | | | | |
 
 
 
 ### template
-| PK | UK | カラム論理名 | カラム物理名 | データ型 | 桁 | NotNull | default | 備考 |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| PK | UK | FK | カラム物理名 | カラム論理名 | データ型 | 桁 | NotNull | default | 備考 |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
