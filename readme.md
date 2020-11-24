@@ -44,3 +44,15 @@ server
 ### template
 | PK | UK | FK | カラム物理名 | カラム論理名 | データ型 | 桁 | NotNull | default | 備考 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+
+## memo
+
+- Model作成
+  ```sh
+  root@6853d1488e1c:/app/server/mysql# npx sequelize-cli model:create --name User --underscored --attributes id:integer,name:string,password:string
+  ```
+
+- tableの詳細を確認
+  ```sql
+  mysql> SHOW FULL COLUMNS FROM users;
+  ```
