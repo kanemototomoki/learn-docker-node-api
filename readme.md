@@ -56,3 +56,7 @@ server
   ```sql
   mysql> SHOW FULL COLUMNS FROM users;
   ```
+
+  ```sql
+  mysql> show CREATE TABLE posts;
+  ```
