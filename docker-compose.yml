@@ -22,7 +22,7 @@ services:
   app:
     image: node:12
     container_name: app
-    # env_file: ./app.env
+    env_file: ./.env
     environment:
       - TZ=Asia/Tokyo
       - DEBUG=app:*
@@ -30,7 +30,7 @@ services:
     ports:
       - '3000:3000'
     volumes:
-      - ./server/src:/app
+      - ./:/app
     working_dir: /app
     networks:
       - learn-docker-node-api
