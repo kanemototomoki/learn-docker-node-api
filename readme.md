@@ -60,3 +60,5 @@ server
   ```sql
   mysql> show CREATE TABLE posts;
   ```
+
+- [外部キーのリファレンス](https://sequelize.org/master/class/lib/dialects/abstract/query-interface.js~QueryInterface.html#instance-method-createTable)
